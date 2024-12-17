@@ -1,0 +1,69 @@
+/*body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+h1 {
+    color: #1a5f7a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#tambahPinpoin {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #57c5b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#tambahPinpoin:hover {
+    background-color: #45a049;
+}
+#backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1a5f7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#backButton:hover {
+    background-color: #134b61;
+}
+.popup-form {
+    display: flex;
+    flex-direction: column;
+}
+.popup-form input, .popup-form textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.popup-form button {
+    background-color: #57c5b6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}*/

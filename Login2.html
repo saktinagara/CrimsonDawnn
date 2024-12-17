@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Masuk</title>
+<link rel="stylesheet" href="css/login2-style.css">
+</head>
+<body>
+    <a href="Main.html" class="back-button">Kembali</a>
+    <div class="login-container">
+        <h2>Masuk</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nama Pengguna" required>
+            <input type="password" id="password" placeholder="Kata Sandi" required>
+            <button type="submit">Masuk</button>
+        </form>
+        <div class="links">
+            <a href="#">Lupa kata sandi?</a> | <a href="Login.html">Daftar</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Di sini Anda dapat menambahkan logika untuk memverifikasi login
+            alert('Login berhasil!');
+            window.location.href = 'Main.html';
+        });
+    </script>
+</body>
+</html>
