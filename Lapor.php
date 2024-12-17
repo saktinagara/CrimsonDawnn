@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <a href="Main.html" class="back-button">Kembali</a>
+    <a href="welcome.php" class="back-button">Kembali</a>
     <div class="container">
         <h1>Formulir Pelaporan</h1>
         <form id="laporanForm" method="POST" action="">

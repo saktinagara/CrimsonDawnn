@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/info-style.css" />
   </head>
   <body>
-    <a href="Main.html" class="back-button">Kembali</a>
+    <a href="welcome.php" class="back-button">Kembali</a>
     <div class="container">
       <h1>Berita Kriminalitas</h1>
 
