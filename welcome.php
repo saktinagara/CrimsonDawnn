@@ -1,9 +1,9 @@
 <?php
     $title = "Crimson Dawn";
     $navigation = [
-        "Beranda" => "#beranda",
-        "Kesiapsiagaan Bencana" => "#kesiapsiagaan",
-        "Laporan Anonim" => "#laporan"
+        "About Us" => "#beranda",
+        "Services" => "#kesiapsiagaan" ,
+        "Contact" => ""
     ];
     $cards = [
         [
@@ -34,111 +34,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crimson Dawn</title>
     <link rel="stylesheet" href="css/style.css">
-    </head>
+</head>
+</head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1 class="header-title"><?= $title ?></h1>
-        <a href="Register.php" class="register-btn">Daftar</a>
-    </header>
-    
-    <!-- Navbar -->
-    <nav>
-        <ul>
-            <?php foreach ($navigation as $name => $link): ?>
-                <li><a href="<?= $link ?>"><?= $name ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-        <?php foreach ($cards as $card): ?>
-            <section class="card">
-                <h2><?= $card['title'] ?></h2>
-                <p><?= $card['content'] ?></p>
-                <?php if ($card['button_text']): ?>
-                    <a href="<?= $card['button_link'] ?>" class="btn"><?= $card['button_text'] ?></a>
-                <?php endif; ?>
-            </section>
-        <?php endforeach; ?>
-    </main>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-left">
-            <h3>CRIMSON DAWN</h3>
-            <p>
-                Kami hadir untuk mendukung keamanan komunitas dengan menyediakan informasi terpercaya dan layanan pelaporan yang cepat dan anonim.
-            </p>
-            <div class="social-icons">
-                <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="icons/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="icons/youtube.png" alt="YouTube"></a>
-            </div>
-        </div>
-        <div class="footer-center">
-            <h4>Menu</h4>
+<header>
+        <h1>Crimson Dawn</h1>
+        <nav>
             <ul>
                 <?php foreach ($navigation as $name => $link): ?>
                     <li><a href="<?= $link ?>"><?= $name ?></a></li>
                 <?php endforeach; ?>
             </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>WE ARE CREATIVE DESIGN AGENCY</h2>
+        <p>Kami hadir dengan solusi kreatif untuk setiap tantangan desain Anda. Keamanan dan kenyamanan adalah prioritas utama kami.</p>
+    </section>
+
+    <!-- Main Content -->
+<main>
+    <section class="main-content">
+        <h2 class="section-title">OUR SERVICES</h2>
+        <div class="card-container">
+            <!-- Card 1: Berita Kriminalitas -->
+            <section id="kesiapsiagaan" class="content-card">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="img/news-icon.png" alt="News Icon">
+                    </div>
+                    <h3>Berita Kriminalitas</h3>
+                    <p>Tekan tombol di bawah untuk melihat berita mengenai kejahatan-kejahatan lebih lanjut.</p>
+                    <a href="Info.php" class="btn">Buka</a>
+                </div>
+            </section>
+
+            <!-- Card 2: Pelaporan Anonim -->
+            <section id="laporan" class="content-card">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <img src="img/report-icon.png" alt="Report Icon">
+                    </div>
+                    <h3>Sistem Pelaporan</h3>
+                    <p>Laporkan aktivitas mencurigakan secara anonim untuk membantu menjaga keamanan komunitas kita.</p>
+                    <a href="Lapor.php" class="btn">Buat Laporan</a>
+                </div>
+            </section>
         </div>
-        <div class="footer-right">
-            <h4>Kontak Kami</h4>
-            <p><i class="fas fa-map-marker-alt"></i> 123 Jalan Raya Keamanan, Kota Aman</p>
-            <p><i class="fas fa-phone"></i> 0812-3456-7890</p>
-            <p><i class="fas fa-envelope"></i> support@crimsondawn.com</p>
+    </section>
+</main>
+
+<!-- Section Why Choose Us -->
+<section id="why-choose-us" class="why-choose-us">
+    <h2 class="section-title">Why Choose Us</h2>
+    <div class="why-container">
+        <!-- Item 1 -->
+        <div class="why-bar">
+            <div class="why-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Keamanan" />
+            </div>
+            <div class="why-content">
+                <h3>Keamanan Terjamin</h3>
+                <p>Kami memastikan layanan aman dengan enkripsi tingkat tinggi untuk melindungi data Anda.</p>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="why-bar">
+            <div class="why-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/3565/3565401.png" alt="Support" />
+            </div>
+            <div class="why-content">
+                <h3>Pelayanan 24/7</h3>
+                <p>Tim kami selalu siap membantu Anda kapan saja, di mana saja dengan cepat.</p>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="why-bar">
+            <div class="why-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/753/753318.png" alt="Mudah Digunakan" />
+            </div>
+            <div class="why-content">
+                <h3>Mudah Digunakan</h3>
+                <p>Antarmuka yang ramah pengguna dan sederhana memudahkan akses layanan kami.</p>
+            </div>
         </div>
     </div>
-    <p class="footer-bottom">&copy; <?= date('Y') ?> Crimson Dawn | Semua Hak Dilindungi</p>
+</section>
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>Crimson<span>Dawn</span>.</h3>
+            <p>All content on this website is protected by copyright and may not be used 
+                <br> without permission from SafetyNet Group.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>CrimsonDawn.id</li>
+                    <li>crimsondawn@safetynet.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 CrimsonDawn. All Rights Reserved.</p>
+    </div>
 </footer>
-
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Crimson Dawn</title>
-</head>
-<body>
-    <header>
-        <h1 class="header-title">Crimson Dawn</h1>
-        <a href="Register.html" class="register-btn">Daftar</a>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#kesiapsiagaan">Kesiapsiagaan Bencana</a></li>
-            <li><a href="#laporan">Laporan Anonim</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section id="beranda" class="card">
-            <h2>Selamat Datang di Jaringan Keamanan Publik</h2>
-            <p>Kami berkomitmen untuk menjaga keamanan dan kesejahteraan warga kota. Gunakan layanan kami untuk tetap terinformasi dan berpartisipasi dalam menjaga keamanan komunitas kita.</p>
-        </section>
-        
-        <section id="kesiapsiagaan" class="card">
-            <h2>Berita Kriminalitas</h2>
-            <p>Tekan tombol di bawah untuk melihat lebih lanjut.</p>
-            <a href="Info.php" class="btn">Buka</a>
-        </section>
-        
-        <section id="laporan" class="card">
-            <h2>Sistem Pelaporan Tips Anonim</h2>
-            <p>Laporkan aktivitas mencurigakan secara anonim untuk membantu menjaga keamanan komunitas kita.</p>
-            <a href="Lapor.php" class="btn">Buat Laporan</a>
-        </section>
-    </main>
-    
-</body>
-</html> -->
