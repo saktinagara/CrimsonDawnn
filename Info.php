@@ -16,7 +16,7 @@
         Polisi telah mengidentifikasi pelaku dalam kasus pembobolan yang terjadi
         di kawasan bisnis beberapa hari lalu. Dalam konferensi pers, polisi
         mengumumkan bahwa mereka telah menangkap dua orang yang diduga terlibat
-        dalam kejahatan tersebut maantap..
+        dalam kejahatan tersebut maantap keren..
       </p>
 
       <h2>Upaya Pencegahan Kriminalitas</h2>
