@@ -52,6 +52,8 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/dashboard-style.css">
 </head>
 <body>
+    <a href="index.php" class="logout-btn">Log out</a>
+    
     <h1>Dashboard Berita</h1>
 
     <h2>Tambah Berita</h2>

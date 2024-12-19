@@ -27,14 +27,14 @@ if (isset($_POST['score'])) {
             flex-direction: column;
             align-items: center;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #000;
         }
         #game-container {
             margin: 20px;
         }
         canvas {
-            border: 2px solid #333;
-            background-color: #fff;
+            border: 2px solid #fff;
+            background-color: #1a1a1a;
         }
         #score-container {
             margin: 10px;
@@ -70,6 +70,12 @@ if (isset($_POST['score'])) {
         }
         button:hover {
             background-color: #45a049;
+        }
+        h1{
+            color: white;
+        }
+        span{
+            color: white;
         }
     </style>
 </head>
@@ -159,11 +165,11 @@ if (isset($_POST['score'])) {
 
         function draw() {
             // Clear canvas
-            ctx.fillStyle = 'white';
+            ctx.fillStyle = '#1a1a1a';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             // Draw snake
-            ctx.fillStyle = 'green';
+            ctx.fillStyle = '#31e9b5';
             snake.forEach(segment => {
                 ctx.fillRect(segment.x, segment.y, gridSize-2, gridSize-2);
             });
