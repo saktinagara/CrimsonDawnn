@@ -3,7 +3,8 @@
     $navigation = [
         "About Us" => "#beranda",
         "Services" => "#kesiapsiagaan" ,
-        "Contact" => ""
+        "Contact" => "",
+        "Sign up" => "index.php"
     ];
     $cards = [
         [
