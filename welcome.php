@@ -131,7 +131,7 @@
 <footer class="footer" id="contact">
     <div class="footer-container">
         <div class="footer-brand">
-            <h3>Crimson<span>Dawn</span>.</h3>
+            <h3>Crimson<span>Dawn</span></h3>
             <p>All content on this website is protected by copyright and may not be used 
                 <br> without permission from SafetyNet Group.</p>
             <div class="social-icons">
@@ -155,6 +155,9 @@
                 <ul>
                     <li>CrimsonDawn.id</li>
                     <li>crimsondawn@safetynet.com</li>
+
+                    <!-- easter egg -->
+                    <li><a href="game.php" class="transparent-btn" style="opacity: 0;">+</a></li>
                 </ul>
             </div>
         </div>
