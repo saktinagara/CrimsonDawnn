@@ -13,13 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-
+        
         if (password_verify($password, $user['password'])) {
             $_SESSION['user'] = $user['name'];
             header("Location: welcome.php");
         } else {
             echo "Invalid password.";
-        }
+        } 
     } else {
         echo "No user found with this email.";
     }

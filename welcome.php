@@ -1,9 +1,10 @@
 <?php
     $title = "Crimson Dawn";
     $navigation = [
-        "About Us" => "#beranda",
-        "Services" => "#kesiapsiagaan" ,
-        "Contact" => ""
+        "About Us" => "javascript:document.querySelector('#beranda').scrollIntoView({behavior: 'smooth'})",
+        "Services" => "javascript:document.querySelector('#main-co').scrollIntoView({behavior: 'smooth'})",
+        "Contact" => "",
+        "Sign up" => "index.php"
     ];
     $cards = [
         [
@@ -50,20 +51,20 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h2>PENGADUAN KEJAHATAN ONLINE</h2>
-        <p>Kami hadir dengan solusi kreatif untuk setiap tantangan desain Anda. Keamanan dan kenyamanan adalah prioritas utama kami.</p>
+        <h2>FIGHT CRIME WITH US</h2>
+        <i>"Justice thrives when we stand together. Join us to fight crime and make a difference."</i>
     </section>
 
     <!-- Main Content -->
 <main>
-    <section class="main-content">
+    <section class="main-content" id="main-co">
         <h2 class="section-title">OUR SERVICES</h2>
         <div class="card-container">
             <!-- Card 1: Berita Kriminalitas -->
             <section id="kesiapsiagaan" class="content-card">
                 <div class="service-card">
                     <div class="card-icon">
-                        <img src="img/news-icon.png" alt="News Icon">
+                        <img src="img/news" alt="News Icon">
                     </div>
                     <h3>Berita Kriminalitas</h3>
                     <p>Tekan tombol di bawah untuk melihat berita mengenai kejahatan-kejahatan lebih lanjut.</p>
@@ -124,7 +125,7 @@
 </section>
 
     <!-- Footer Section -->
-<footer class="footer">
+<footer class="footer" id="contact">
     <div class="footer-container">
         <div class="footer-brand">
             <h3>Crimson<span>Dawn</span>.</h3>

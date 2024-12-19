@@ -8,7 +8,7 @@
     <title>Register page</title>
 </head>
 <body>
-    <a href="Main.html" class="back-button" style="position: absolute; top: 20px; left: 20px; font-size: 24px; color: #333;">
+    <a href="welcome.php" class="back-button" style="position: absolute; top: 20px; left: 20px; font-size: 24px; color: #57c5b6;">
         <i class="fas fa-arrow-left"></i>
     </a>
     
@@ -49,13 +49,13 @@
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
-                    <h1>Welcome Back to Crimson Dawn</h1>
-                    <p>Enter your email and password to access all features.</p>
+                    <h1>Hello, Welcome to Crimson Dawn</h1>
+                    <p>Register with your personal data to access all features.</p>
                     <button class="hidden" id="login">Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Hello, Welcome to Crimson Dawn</h1>
-                    <p>Register with your personal data to access all features.</p>
+                    <h1>Welcome Back to Crimson Dawn</h1>
+                    <p>Enter your email and password to access all features.</p>
                     <button class="hidden" id="register">Sign Up</button>
                 </div>
             </div>
