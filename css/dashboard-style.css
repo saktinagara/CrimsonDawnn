@@ -92,6 +92,18 @@ a:hover {
     display: flex;
     gap: 10px;
 }
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #57c5b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+.logout-btn:hover {
+    background-color: #45a497;
+}
 
 @media (max-width: 768px) {
     table {
