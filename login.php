@@ -16,6 +16,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if (password_verify($password, $user['password'])) {
             $_SESSION['user'] = $user['name'];
+            
+            if ($password === "admin") {
+                header("Location: dashboard.php");
+                exit();
+            }
+            
+            if ($password === "gover") {
+                header("Location: admin.php");
+                exit();
+            }
+            
             header("Location: welcome.php");
         } else {
             echo "Invalid password.";
