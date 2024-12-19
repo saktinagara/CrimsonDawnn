@@ -8,7 +8,7 @@
     <title>Register page</title>
 </head>
 <body>
-    <a href="welcome.php" class="back-button" style="position: absolute; top: 20px; left: 20px; font-size: 24px; color: #333;">
+    <a href="welcome.php" class="back-button" style="position: absolute; top: 20px; left: 20px; font-size: 24px; color: #57c5b6;">
         <i class="fas fa-arrow-left"></i>
     </a>
     
