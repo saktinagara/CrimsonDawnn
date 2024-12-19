@@ -60,6 +60,63 @@ h1 {
     color: #31e9b5;
 }
 
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .global-nav {
+        position: relative;
+    }
+
+    /* Sembunyikan menu awal */
+    .global-nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #1a1a1a;
+        width: 200px;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Tampilkan menu saat hover */
+    .global-nav:hover ul {
+        display: block;
+    }
+
+    /* Tambahkan tombol menu */
+    .global-nav::after {
+        content: '☰';
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .global-nav li {
+        margin: 0;
+        border-bottom: 1px solid #2a2a2a;
+    }
+
+    .global-nav li:last-child {
+        border-bottom: none;
+    }
+
+    .global-nav a {
+        padding: 12px 20px;
+        display: block;
+    }
+
+    .global-nav a:hover {
+        background-color: #2a2a2a;
+    }
+}
+
 /* Menambahkan padding-top agar konten tidak tertutup header */
 body {
     margin: 0;
@@ -68,6 +125,11 @@ body {
     padding-top: 80px; /* Sesuaikan dengan tinggi header */
 }
 
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Menyesuaikan padding untuk tampilan mobile */
+    }
+}
 
 /* Hero Section */
 .hero {
