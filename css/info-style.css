@@ -1,31 +1,75 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #000;
+    color: #333;
 }
-.container {
-    max-width: 800px;
+
+h1 {
+    text-align: center;
+    color: #57c5b6;
+    margin-bottom: 30px;
+}
+
+.berita-container {
+    max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-h1, h2 {
-    color: #1a5f7a;
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
-ul {
-    padding-left: 20px;
+
+.card:hover {
+    transform: translateY(-5px);
 }
-.back-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: #1a5f7a;
-    color: white;
+
+.card-header {
+    background-color: #57c5b6;
+    padding: 15px;
+}
+
+.card-header h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
     padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+.timestamp {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.card-empty {
+    text-align: center;
+    padding: 40px;
+    grid-column: 1 / -1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #57c5b6;
+    margin-top: 40px;
 }

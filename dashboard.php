@@ -6,6 +6,7 @@ session_start();
 if (isset($_POST['add'])) {
     $judul = $_POST['judul'];
     $konten = $_POST['konten'];
+    
     $sql_add = "INSERT INTO berita (judul, konten, tanggal) VALUES (?, ?, NOW())";
     $stmt = $conn->prepare($sql_add);
     $stmt->bind_param("ss", $judul, $konten);
@@ -26,6 +27,7 @@ if (isset($_POST['edit'])) {
     $edit_id = $_POST['edit_id'];
     $judul = $_POST['judul'];
     $konten = $_POST['konten'];
+    
     $sql_edit = "UPDATE berita SET judul = ?, konten = ? WHERE id = ?";
     $stmt = $conn->prepare($sql_edit);
     $stmt->bind_param("ssi", $judul, $konten, $edit_id);
@@ -43,7 +45,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Info Berita</title>
-    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="css/dashboard-style.css">
 </head>
 <body>
     <h1>Dashboard Berita</h1>
