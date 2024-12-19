@@ -67,7 +67,7 @@
             <section id="kesiapsiagaan" class="content-card">
                 <div class="service-card">
                     <div class="card-icon">
-                        <img src="img/news" alt="News Icon">
+                    <img src="image/news.jpg" alt="News Icon">
                     </div>
                     <h3>Berita Kriminalitas</h3>
                     <p>Tekan tombol di bawah untuk melihat berita mengenai kejahatan-kejahatan lebih lanjut.</p>
@@ -79,7 +79,7 @@
             <section id="laporan" class="content-card">
                 <div class="service-card">
                     <div class="card-icon">
-                        <img src="img/report-icon.png" alt="Report Icon">
+                    <img src="image/report.jpg" alt="Report Icon">
                     </div>
                     <h3>Sistem Pelaporan</h3>
                     <p>Laporkan aktivitas mencurigakan secara anonim untuk membantu menjaga keamanan komunitas kita.</p>

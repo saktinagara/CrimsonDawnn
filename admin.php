@@ -28,7 +28,7 @@ $result = $conn->query($sql);
 <body>
     <div class="container">
         <div class="header">
-        <a href="keluar.php" class="logout-btn">Keluar</a>
+        <a href="index.php" class="logout-btn">logout</a>
         </div>
 
         <h1>Data Laporan Kriminalitas</h1>
