@@ -50,7 +50,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h2>WE ARE CREATIVE DESIGN AGENCY</h2>
+        <h2>PENGADUAN KEJAHATAN ONLINE</h2>
         <p>Kami hadir dengan solusi kreatif untuk setiap tantangan desain Anda. Keamanan dan kenyamanan adalah prioritas utama kami.</p>
     </section>
 
