@@ -31,7 +31,11 @@ if (isset($_POST['edit'])) {
     $sql_edit = "UPDATE berita SET judul = ?, konten = ? WHERE id = ?";
     $stmt = $conn->prepare($sql_edit);
     $stmt->bind_param("ssi", $judul, $konten, $edit_id);
-    $stmt->execute();
+    if($stmt->execute()) {
+        echo "<script>alert('Data berhasil diperbarui!'); window.location='dashboard.php';</script>";
+    } else {
+        echo "<script>alert('Gagal memperbarui data!'); window.location='dashboard.php';</script>";
+    }
 }
 
 // Ambil Data Berita
@@ -57,6 +61,18 @@ $result = $conn->query($sql);
         <button type="submit" name="add">Tambah</button>
     </form>
 
+    <!-- Form Edit yang Tersembunyi -->
+    <div id="editForm" style="display:none;">
+        <h2>Edit Berita</h2>
+        <form action="" method="POST">
+            <input type="hidden" name="edit_id" id="edit_id">
+            <input type="text" name="judul" id="edit_judul" required>
+            <textarea name="konten" id="edit_konten" required></textarea>
+            <button type="submit" name="edit">Simpan Perubahan</button>
+            <button type="button" onclick="hideEditForm()">Batal</button>
+        </form>
+    </div>
+
     <h2>Daftar Berita</h2>
     <table border="1">
         <thead>
@@ -77,9 +93,9 @@ $result = $conn->query($sql);
                         <td>{$row['judul']}</td>
                         <td>{$row['konten']}</td>
                         <td>{$row['tanggal']}</td>
-                        <td>
+                        <td class='action-buttons'>
                             <a href='?delete_id={$row['id']}' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a>
-                            <button type='button' onclick='editBerita({$row['id']}, \"{$row['judul']}\", \"{$row['konten']}\")'>Edit</button>
+                            <button type='button' onclick='showEditForm({$row['id']}, \"{$row['judul']}\", \"{$row['konten']}\")'>Edit</button>
                         </td>
                     </tr>";
                 }
@@ -91,17 +107,16 @@ $result = $conn->query($sql);
     </table>
 
     <script>
-        function editBerita(id, judul, konten) {
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.innerHTML = `
-                <input type="hidden" name="edit_id" value="${id}">
-                <input type="text" name="judul" value="${judul}" required>
-                <textarea name="konten" required>${konten}</textarea>
-                <button type="submit" name="edit">Simpan</button>
-            `;
-            document.body.appendChild(form);
-            form.submit();
+        function showEditForm(id, judul, konten) {
+            document.getElementById('editForm').style.display = 'block';
+            document.getElementById('edit_id').value = id;
+            document.getElementById('edit_judul').value = judul;
+            document.getElementById('edit_konten').value = konten;
+            window.scrollTo(0, document.getElementById('editForm').offsetTop);
+        }
+
+        function hideEditForm() {
+            document.getElementById('editForm').style.display = 'none';
         }
     </script>
 </body>

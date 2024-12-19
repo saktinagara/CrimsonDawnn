@@ -1,68 +1,105 @@
-/* General styles */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-  }
-  
-  h1 {
+    margin: 0;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+h1, h2 {
     text-align: center;
-    color: #444;
-    margin-top: 20px;
-  }
-  
-  /* Table styles */
-  table {
-    width: 90%;
-    margin: 20px auto;
+    color: #57c5b6;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(87, 197, 182, 0.2);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #57c5b6;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    background-color: #57c5b6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a497;
+}
+
+table {
+    width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #111;
+    border-radius: 10px;
     overflow: hidden;
-  }
-  
-  th,
-  td {
-    padding: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
     text-align: left;
-  }
-  
-  th {
-    background-color: #007bff;
-    color: white;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-  }
-  
-  td {
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: #57c5b6;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #222;
+}
+
+a {
+    color: #57c5b6;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    color: #45a497;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
     table {
-      width: 100%;
-      font-size: 12px;
+        display: block;
+        overflow-x: auto;
     }
-  
-    th,
-    td {
-      padding: 10px;
+    
+    form {
+        padding: 15px;
     }
-  }
-  
+}

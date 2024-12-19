@@ -73,3 +73,18 @@ footer {
     color: #57c5b6;
     margin-top: 40px;
 }
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #57c5b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.back-button:hover {
+    background-color: #45a497;
+}
