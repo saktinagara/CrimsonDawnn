@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Pelaporan</title>
     <link rel="stylesheet" href="css/lapor-style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
@@ -40,16 +41,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <header>
-    <h1><a href="welcome.php" class="back-button">Crimson Dawn</a></h1>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<header>
+        <div class="header-content">
+        <h1><a href="welcome.php">Crimson Dawn</a></h1>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="#beranda">About Us</a></li>
+                    <li><a href="#main-co">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.php">Sign up</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <!-- <a href="welcome.php" class="back-button">← Kembali</a> -->
-    <header>
     <div class="container">
         <h1>Formulir Pelaporan</h1>
         <form id="laporanForm" method="POST" action="">

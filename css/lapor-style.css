@@ -3,44 +3,9 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Warna hitam gradasi */
+    background: linear-gradient(135deg, #0d0d0d, #161616); /* Warna hitam gradasi */
     color: #ccc; /* Abu-abu terang */
 }
-
-/* Header dan Navbar */
-header {
-    background: #0d0d0d; /* Hitam pekat */
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-header h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    font-weight: bold;
-}
-
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #ccc; /* Abu-abu terang */
-    font-size: 1rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #31e9b5; /* Hijau terang */
-}
-
 /* Container */
 .container {
     width: 90%; /* Gunakan 90% lebar layar */

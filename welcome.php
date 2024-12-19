@@ -1,11 +1,5 @@
 <?php
-    $title = "Crimson Dawn";
-    $navigation = [
-        "About Us" => "javascript:document.querySelector('#beranda').scrollIntoView({behavior: 'smooth'})",
-        "Services" => "javascript:document.querySelector('#main-co').scrollIntoView({behavior: 'smooth'})",
-        "Contact" => "",
-        "Sign up" => "index.php"
-    ];
+
     $cards = [
         [
             "title" => "Selamat Datang di Jaringan Keamanan Publik",
@@ -35,22 +29,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crimson Dawn</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 </head>
 <body>
 <header>
-        <h1>Crimson Dawn</h1>
-        <nav>
+    <div class="header-content">
+        <h1><a href="welcome.php">Crimson Dawn</a></h1>
+        <nav class="global-nav">
             <ul>
-                <?php foreach ($navigation as $name => $link): ?>
-                    <li><a href="<?= $link ?>"><?= $name ?></a></li>
-                <?php endforeach; ?>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#main-co">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.php">Sign up</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="about">
         <h2>FIGHT CRIME WITH US</h2>
         <i>"Justice thrives when we stand together. Join us to fight crime and make a difference."</i>
     </section>
@@ -160,3 +163,17 @@
         <p>&copy; 2023 CrimsonDawn. All Rights Reserved.</p>
     </div>
 </footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

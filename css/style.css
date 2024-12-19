@@ -16,42 +16,47 @@ a {
 
 /* Header & Navbar */
 header {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-    color: #fff;
-    position: fixed; /* Membuat header tetap di posisi atas */
-    top: 0; /* Menempel di bagian atas */
-    left: 0;
-    width: 100%; /* Lebar penuh */
-    z-index: 1000; /* Menempatkan di atas elemen lain */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek elevasi */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-header h1 {
+h1 {
     color: #31e9b5;
+    margin: 0;
 }
 
-nav ul {
+.global-nav ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    margin-left: 20px;
+.global-nav li {
+    margin-left: 2rem;
 }
 
-nav ul li a {
+.global-nav a {
     color: #fff;
     text-decoration: none;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.global-nav a:hover {
     color: #31e9b5;
 }
 
@@ -320,4 +325,8 @@ p {
     padding: 10px 0;
     border-top: 1px solid #ffffff33; /* Garis transparan */
     font-size: 0.9rem;
+}
+
+html {
+    scroll-behavior: smooth;
 }
