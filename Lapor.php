@@ -37,52 +37,79 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         #map { height: 400px; width: 100%; }
     </style>
 </head>
+</head>
 <body>
-    <a href="welcome.php" class="back-button">Kembali</a>
+
+    <header>
+    <h1><a href="welcome.php" class="back-button">Crimson Dawn</a></h1>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    </header>
+    <!-- <a href="welcome.php" class="back-button">← Kembali</a> -->
+    <header>
     <div class="container">
         <h1>Formulir Pelaporan</h1>
         <form id="laporanForm" method="POST" action="">
-            <label for="jenis">Jenis Laporan:</label>
-            <select id="jenis" name="jenis" required>
-                <option value="">Pilih jenis laporan</option>
-                <option value="kejahatan">Kejahatan</option>
-                <option value="kecelakaan">Kecelakaan</option>
-                <option value="bencana">Bencana</option>
-                <option value="lainnya">Lainnya</option>
-            </select>
-
-            <label for="lokasi">Lokasi Kejadian:</label>
-            <input type="text" id="lokasi" name="lokasi" required>
-
-            <label for="tanggal">Tanggal Kejadian:</label>
-            <input type="date" id="tanggal" name="tanggal" required>
-
-            <label for="deskripsi">Deskripsi Kejadian:</label>
-            <textarea id="deskripsi" name="deskripsi" rows="5" required></textarea>
-
-            <label for="kontak">Kontak (opsional):</label>
-            <input type="text" id="kontak" name="kontak">
-
-            <div id="map"></div>
-            <input type="hidden" id="lat" name="lat">
-            <input type="hidden" id="lng" name="lng">
-
-            <button type="submit">Kirim Laporan</button>
-        </form>
+    <div class="form-group">
+        <label for="jenis">Jenis Laporan:</label>
+        <select id="jenis" name="jenis" required>
+            <option value="" disabled selected>Pilih jenis laporan</option>
+            <option value="kejahatan">Kejahatan</option>
+            <option value="kecelakaan">Kecelakaan</option>
+            <option value="bencana">Bencana</option>
+            <option value="lainnya">Lainnya</option>
+        </select>
     </div>
+    <div class="form-group">
+        <label for="lokasi">Lokasi Kejadian:</label>
+        <input type="text" id="lokasi" name="lokasi" placeholder="Masukkan lokasi kejadian" required>
+    </div>
+    <div class="form-group">
+        <label for="tanggal">Tanggal Kejadian:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+    </div>
+    <div class="form-group">
+        <label for="deskripsi">Deskripsi Kejadian:</label>
+        <textarea id="deskripsi" name="deskripsi" placeholder="Jelaskan secara rinci kejadian yang dilaporkan" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="kontak">Kontak (Opsional):</label>
+        <input type="text" id="kontak" name="kontak" placeholder="Masukkan nomor telepon atau email">
+    </div>
+    <div class="form-group">
+        <label for="lokasi">Pilih Lokasi pada Peta:</label>
+        <div id="map"></div>
+        <input type="hidden" id="lat" name="lat">
+        <input type="hidden" id="lng" name="lng">
+    </div>
+    <button type="submit">Kirim Laporan</button>
+</form>
     <script>
+        // Inisialisasi Peta
         var map = L.map('map').setView([-6.2088, 106.8456], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+        var marker;
+
+        // Event Klik pada Peta
         map.on('click', function(e) {
             var lat = e.latlng.lat;
             var lng = e.latlng.lng;
+
             document.getElementById('lat').value = lat;
             document.getElementById('lng').value = lng;
-            L.marker([lat, lng]).addTo(map);
+
+            // Menambahkan Marker
+            if (marker) {
+                map.removeLayer(marker);
+            }
+            marker = L.marker([lat, lng]).addTo(map);
         });
     </script>
 </body>
