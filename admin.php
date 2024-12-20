@@ -26,6 +26,8 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/admin-style.css?v=1.0">
 </head>
 <body>
+    <?php include 'navbaradmin.php'; ?>
+    
     <div class="container">
         <div class="header">
         <a href="index.php" class="logout-btn">logout</a>

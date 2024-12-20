@@ -52,61 +52,66 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/dashboard-style.css">
 </head>
 <body>
-    <a href="index.php" class="logout-btn">Log out</a>
+    <?php include 'navbaradmin.php'; ?>
     
-    <h1>Dashboard Berita</h1>
+    <a href="index.php" class="logout-btn">Log out</a>
+    <div class="container">
+        <h1>Dashboard Berita</h1>
 
-    <h2>Tambah Berita</h2>
-    <form action="" method="POST">
-        <input type="text" name="judul" placeholder="Judul" required>
-        <textarea name="konten" placeholder="Konten" required></textarea>
-        <button type="submit" name="add">Tambah</button>
-    </form>
-
-    <!-- Form Edit yang Tersembunyi -->
-    <div id="editForm" style="display:none;">
-        <h2>Edit Berita</h2>
+        <h2>Tambah Berita</h2>
         <form action="" method="POST">
-            <input type="hidden" name="edit_id" id="edit_id">
-            <input type="text" name="judul" id="edit_judul" required>
-            <textarea name="konten" id="edit_konten" required></textarea>
-            <button type="submit" name="edit">Simpan Perubahan</button>
-            <button type="button" onclick="hideEditForm()">Batal</button>
+            <input type="text" name="judul" placeholder="Judul" required>
+            <textarea name="konten" placeholder="Konten" required></textarea>
+            <button type="submit" name="add">Tambah</button>
         </form>
-    </div>
 
-    <h2>Daftar Berita</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Judul</th>
-                <th>Konten</th>
-                <th>Tanggal</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>
-                        <td>{$row['id']}</td>
-                        <td>{$row['judul']}</td>
-                        <td>{$row['konten']}</td>
-                        <td>{$row['tanggal']}</td>
-                        <td class='action-buttons'>
-                            <a href='?delete_id={$row['id']}' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a>
-                            <button type='button' onclick='showEditForm({$row['id']}, \"{$row['judul']}\", \"{$row['konten']}\")'>Edit</button>
-                        </td>
-                    </tr>";
-                }
-            } else {
-                echo "<tr><td colspan='5'>Belum ada berita.</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+        <!-- Form Edit yang Tersembunyi -->
+        <div id="editForm" style="display:none;">
+            <h2>Edit Berita</h2>
+            <form action="" method="POST">
+                <input type="hidden" name="edit_id" id="edit_id">
+                <input type="text" name="judul" id="edit_judul" required>
+                <textarea name="konten" id="edit_konten" required></textarea>
+                <button type="submit" name="edit">Simpan Perubahan</button>
+                <button type="button" onclick="hideEditForm()">Batal</button>
+            </form>
+        </div>
+
+        <h2>Daftar Berita</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Judul</th>
+                        <th>Konten</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>
+                                <td>{$row['id']}</td>
+                                <td>{$row['judul']}</td>
+                                <td>{$row['konten']}</td>
+                                <td>{$row['tanggal']}</td>
+                                <td class='action-buttons'>
+                                    <a href='?delete_id={$row['id']}' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a>
+                                    <button type='button' onclick='showEditForm({$row['id']}, \"{$row['judul']}\", \"{$row['konten']}\")'>Edit</button>
+                                </td>
+                            </tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='5'>Belum ada berita.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script>
         function showEditForm(id, judul, konten) {
