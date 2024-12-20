@@ -30,7 +30,6 @@ $result = $conn->query($sql);
     
     <div class="container">
         <div class="header">
-        <a href="index.php" class="logout-btn">logout</a>
         </div>
 
         <h1>Data Laporan Kriminalitas</h1>
