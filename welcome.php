@@ -69,9 +69,9 @@
                     <div class="card-icon">
                     <img src="image/news.jpg" alt="News Icon">
                     </div>
-                    <h3>Berita Kriminalitas</h3>
-                    <p>Tekan tombol di bawah untuk melihat berita mengenai kejahatan-kejahatan lebih lanjut.</p>
-                    <a href="Info.php" class="btn">Buka</a>
+                    <h3>News Crime</h3>
+                    <p>Press the button below to see news about more crimes.</p>
+                    <a href="Info.php" class="btn">Open</a>
                 </div>
             </section>
 
@@ -81,9 +81,10 @@
                     <div class="card-icon">
                     <img src="image/report.jpg" alt="Report Icon">
                     </div>
-                    <h3>Sistem Pelaporan</h3>
-                    <p>Laporkan aktivitas mencurigakan secara anonim untuk membantu menjaga keamanan komunitas kita.</p>
-                    <a href="Lapor.php" class="btn">Buat Laporan</a>
+                    <h3>Reporting System</h3>
+                    <p>
+                    Report suspicious activity anonymously to help keep our community safe.</p>
+                    <a href="Lapor.php" class="btn">Make a Report</a>
                 </div>
             </section>
         </div>
@@ -100,8 +101,9 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Keamanan" />
             </div>
             <div class="why-content">
-                <h3>Keamanan Terjamin</h3>
-                <p>Kami memastikan layanan aman dengan enkripsi tingkat tinggi untuk melindungi data Anda.</p>
+                <h3>Guaranteed Security</h3>
+                <p>
+                We ensure secure services with high-level encryption to protect your data.</p>
             </div>
         </div>
         <!-- Item 2 -->
@@ -110,8 +112,9 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/3565/3565401.png" alt="Support" />
             </div>
             <div class="why-content">
-                <h3>Pelayanan 24/7</h3>
-                <p>Tim kami selalu siap membantu Anda kapan saja, di mana saja dengan cepat.</p>
+                <h3>24/7 Service</h3>
+                <p>
+                Our team is always ready to help you anytime, anywhere quickly.</p>
             </div>
         </div>
         <!-- Item 3 -->
@@ -120,8 +123,8 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/753/753318.png" alt="Mudah Digunakan" />
             </div>
             <div class="why-content">
-                <h3>Mudah Digunakan</h3>
-                <p>Antarmuka yang ramah pengguna dan sederhana memudahkan akses layanan kami.</p>
+                <h3>Easy to Use</h3>
+                <p>User friendly and simple interface makes it easy to access our services.</p>
             </div>
         </div>
     </div>
