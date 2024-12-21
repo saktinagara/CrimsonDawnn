@@ -103,29 +103,44 @@ if (isset($_POST['edit'])) {
 
 // Proses Hapus Data
 if (isset($_GET['delete_id'])) {
-    $delete_id = $_GET['delete_id'];
-    
-    // Ambil informasi gambar sebelum menghapus
-    $sql_get_image = "SELECT gambar FROM berita WHERE id = ?";
-    $stmt = $conn->prepare($sql_get_image);
-    $stmt->bind_param("i", $delete_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($row = $result->fetch_assoc()) {
-        if (!empty($row['gambar']) && file_exists($row['gambar'])) {
-            unlink($row['gambar']);
+    try {
+        $conn->begin_transaction();
+        
+        $delete_id = $_GET['delete_id'];
+        
+        // Ambil informasi gambar sebelum menghapus
+        $sql_get_image = "SELECT gambar FROM berita WHERE id = ?";
+        $stmt = $conn->prepare($sql_get_image);
+        $stmt->bind_param("i", $delete_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($row = $result->fetch_assoc()) {
+            if (!empty($row['gambar']) && file_exists($row['gambar'])) {
+                unlink($row['gambar']);
+            }
         }
-    }
-    
-    $sql_delete = "DELETE FROM berita WHERE id = ?";
-    $stmt = $conn->prepare($sql_delete);
-    $stmt->bind_param("i", $delete_id);
-    
-    if ($stmt->execute()) {
-        echo "<script>alert('Data berhasil dihapus!'); window.location='dashboard.php';</script>";
-    } else {
-        echo "<script>alert('Gagal menghapus data!'); window.location='dashboard.php';</script>";
+        
+        // Hapus reactions terlebih dahulu
+        $sql_delete_reactions = "DELETE FROM berita_reactions WHERE berita_id = ?";
+        $stmt_reactions = $conn->prepare($sql_delete_reactions);
+        $stmt_reactions->bind_param("i", $delete_id);
+        $stmt_reactions->execute();
+        
+        // Hapus berita
+        $sql_delete_berita = "DELETE FROM berita WHERE id = ?";
+        $stmt_berita = $conn->prepare($sql_delete_berita);
+        $stmt_berita->bind_param("i", $delete_id);
+        
+        if ($stmt_berita->execute()) {
+            $conn->commit();
+            echo "<script>alert('Data berhasil dihapus!'); window.location='dashboard.php';</script>";
+        } else {
+            throw new Exception("Gagal menghapus berita");
+        }
+    } catch (Exception $e) {
+        $conn->rollback();
+        echo "<script>alert('Gagal menghapus data: " . $e->getMessage() . "'); window.location='dashboard.php';</script>";
     }
 }
 ?>
