@@ -195,9 +195,6 @@ footer {
     </header>
 
     <div class="content-wrapper">
-        <a href="javascript:history.back()" class="back-button">
-            <i class="fas fa-arrow-left"></i>
-        </a>
         
         <h1>Info Berita</h1>
 
